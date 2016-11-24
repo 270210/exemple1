@@ -1,0 +1,131 @@
+como usar e instalar na maquina o ("Git e Github")
+
+		PASSO 1
+		
+ Instale na plataforma desejada deixando nessas
+configuração abaixo:
+
+1) (marque todas as opções menos a "git-cheetah shell 
+extension (32bits) ".
+2) deixa git mesmo o menu folder.
+3) (run git from the windows command prompt).
+4) marque a opcão checkout windows-style,commit Unix etc.
+
+após a instalação abra o git bash é digite "GIT" e aperte enter
+se aparecer uma lista de codigo é que tudo deu certo.
+
+			PASSO 2
+
+1) Após a instalação crie uma conta no site do GITHUB que ele servirá
+como um servidor para hospedar a nossas manipulações.
+
+2) depois de cria a conta vai até o gitbash e digite:
+
+ "ssh-keygen -t rsa -c "email@provedor.com" " 
+
+ "tem que ser com o seu email real que você colocou lá no github
+de preferencia".
+
+ Para ele cria uma pasta .ssh com isso ele já cria uma "chave privada
+e uma chave pública dentro dessa pasta que se encontra normalmente
+na pasta de users ou úsuario do windows ele pedirá se vc vai querer
+proteger as chaves por senha nessa parte:
+
+" Enter passphrase (empty for no passphrase): " ai vai da sua escolha.
+
+3) agora vamos retorna ao site do github e ir na parte de configurações
+na parte de configurações pessoais vai em " SSH and GPG keys"
+e depois vai na SSH keys e adiciona uma new SHH keys
+no titulo é só colocar o nome do sistema operaciona exemplo "windows"
+
+4) agora vamos na pasta de usuarios/users vamos na pasta .ssh
+indo lá encotramos 2 arquivos esses arquivos são nossas chaves
+tanto publica quando privada. agora iremos abrir o arquivo que
+se encontra com a extesão .pub "nossa chave publica" em um editor
+de texto com o metodo "abrir com" copiamos o conteudo e colamos
+no campo abaixo onde colocamos o sistema operacional e salvamos
+
+5) agora vamo configura o nosso GIT primeiramente vamos a imagem 
+de atalho e com um click do botão direito vamos em propriedades e
+no campo de " iniciar em " colocamos o local ideal para os nossos repo-
+sitorios e outros arquivos exemplo no users cria uma pasta e coloca
+no "iniciar em" para lá.
+
+6) agora lá criamos uma pasta e no git bash damos "GIT INIT" para ele criar
+um pasta .git nesse local.
+
+7) na pasta exemplo "local" que criei é onde eu irei colocar todos meus arquivos
+que eu irei fazer os commit (atualizar) ou add (adicionar) 
+
+8) com o comando ( git status ) ele ira mostrar o estado atual dos arquivos exemplo 
+se foi dado commit neles.
+
+9) com o comando (git add nomeaAquivo.extensão) ele adicona o arquivo para o pré processo de commit
+se eu tiver muito arquivos com as mesma extesão exemplo .txt,.css é só
+usar o ( git add *.txt ou git add *.css) que ele irá fazer a seleção de todas 
+extenção do mesmo tipo para a stage area 
+
+10) com o comado( git commit -m "mensagem que identifica o salvamento")
+
+LEMBRETE: O GIT ADD . ELE IRA MANDAR OS ARQUIVOS PARA STAGE AREA E PARA
+CONFIRMAR QUE TODAS AS ATUALIZAÇÕES SÃO VERDADEIRAS DECLARANDO QUE
+VOCÊ TERMINOU O TRABALHO DE EDIÇÃO DAMOS O GIT COMMIT -M "MENSAGEM QUE IDENTIFICA O SALVAMENTO"
+
+SE EU QUISER DEIXA MAIS RAPIDO SEM O ADD É SÓ GIT COMMIT -A -M "MENSAGEM QUE IDENTIFICA O SALVAMENTO"
+ESSE -A SERIA O MENOS O ADD.
+
+11) para fazer com que o git ignore certos arquivos iremos criar uma arquivo dentro da nossa pasta local e coolocar
+todos os nossos arquivos que é para ser ignorados pelo git
+
+12) para ver as alterações feitas pelos git é usar o camando ( git diff) que ele ira mostra
+todas as alterações feitas até o momento que normalmente são apresentada em vermelho
+
+13) ainda no comando ( git diff ) caso eu queira ver quais arquivos estão na stege area 
+esperando para ser dado o commit é só eu dar  o camando ( git diff --staged)
+
+14) para eu ver todos os arquivos que foi alterados e o que foi alterado neles,com o dia,data e a hora
+e vindo com isso tambem um código do commit é só dar o camando ( git log) que ele vai detalhar os commit.
+
+15) para ver um relatório mais completo das alterações que demos o commit é só digitar ( gitk ).
+
+16) para eu ver os códigos de cada commit que eu fiz é só usar comando ( git log --pretty=oneline) assim
+ele irá lista todos os códigos dos dados de foi dado commit.
+
+17) se caso eu querer editar uma arquivo ou por exemplo uma versão ja criada de um código para isso eu
+digito o ( git status) e vejo se o mesmo arquivo manipulado aparece em vermelho se sim eu vou lá e digito
+o camando ( git add .) em seguida eu digito ( git commit --amend -m " messagem de identificação(edição)" )
+e logo em seguida eu digito o comando ( git log --pretty=oneline) e ver se a descrição do arquivo é a mesma
+que eu tinha editado 
+
+18) como eu removo um arquivo da staged area é simples é só usar o comando ( git reset HEAD "nome.exteção" )
+detalhe o HEAD com letras maiusculas.
+
+19) para descartar mudanças no seu diretório é só usar o camando ( git checkout --nome.exteção )
+
+20) se caso eu fizer varias alteraçoes exemplos criar novos arquivos,alterar,renomear e deletar eu primeiro de tudo
+eu aplico camando ( git status) para que eu possa ver quais as alterações e se tiver umas deletadas
+eu primeiro aplico o camando ( git rm nome.exteção) naqueles que foi deletados
+depois eu aplico o nosso velho comado ( git add .) #não esquecer do espaço entre o ponto
+porque assim eu mando o git altera todos os arquivos que contem exteção.
+
+21) como descobrir quem fez as alterações no arquivo é só ultilizar o comando ( git blame nomeArquivo.exteção).
+
+22) No Git, é possível listar todas as Tags existentes em um projeto através do comando tag: ( git tag)
+
+23) se caso querer ver qias as diferencias de versão do documento é só ultilizar a tag:( git diff v.exemple1 v.exemple2)
+
+24) se caso eu queira ver quais as alteracões que foi feitas a cada commit exemplo fazer com que o git mostre o que o programdor
+alterou e quais as que tava anteriomente que ele sobredescreveu é só usa o comando git whatchanged -p 
+
+25) se eu quiser fazer adiciona ao GITHUB os meus arquivo é só eu digitar o comando ( git remote ) para criar uma arquivo remoto 
+porem ele não irá mostrar nada para isso eu terie que digitar o comando ( git remote add nomedorepoditorio url do repositório do github)
+
+exemplo:  (git remote add origin https://github.com/270210/exemple)
+
+em seguida eu digito o comando ( git push origin master ) ou ( git push -u origin master) esse comando serve para nós mandar alterações para o nosso arquivo remoto seguido
+da comando master que seria nossa bransher. 
+
+26) 
+
+
+        
