@@ -125,7 +125,7 @@ exemplo:  (git remote add origin https://github.com/270210/exemple)
 em seguida eu digito o comando ( git push origin master ) ou ( git push -u origin master) esse comando serve para nós mandar alterações para o nosso arquivo remoto seguido
 da comando master que seria nossa bransher. 
 
-26) 
+26) git log para ver os nomes das alterações que foram descritas no  git commit
 
 
         
