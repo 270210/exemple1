@@ -170,7 +170,31 @@ Este comando faz com que as alterações que estão no working directory e no index
  
 Usando a opção apply, recuperamos as últimas alterações da pilha sem removê-las.
 
-38)
+38)Quando realizamos um git merge ou um git rebase, todos os commits de uma branch são aplicadas numa outra branch. Contudo, às vezes desejamos que apenas alguns determinados commits sejam aplicados na outra branch. Vamos observar o seguinte exemplo:
+
+39)Com cherry-pick, temos a liberdade de escolher quais commits queremos trazer para a nossa branch. Mas veja que isso pode ser perigoso: às vezes, trazer um commit isolado, sem os commits ao redor, pode gerar problemas de merge ou até mesmo problemas no código.
+
+Os problemas de merge gerados pelo cherry-pick são resolvidos de maneira semelhante ao git merge e git rebase. Você deve abrir os arquivos com conflito, fazer as mudanças necessárias no código (eles também estão demarcados com >>>>) e, em seguida, adicionar (git add) os arquivos com conflito e commitar (git commit).
+
+40)Agora imagine que nós só queiramos aplicar o commit 4 da branch master em nossa brach work pois ela introduziu algum trecho de código que nos ajudará em nossa tarefa. Para conseguir esse resultado, utilizaremos o comando git cherry-pick.
+Para usar o cherry-pick, precisamos indicar quais os commits que serão aplicados em nossa branch atual. Por exemplo, se quisermos mover apenas o commit 4 para a branch work, fazemos(git cherry-pick 4)
+
+41)Ao executar o cherry-pick, o commit escolhido é copiado. Contudo, existe uma opção que permite não gerar este commit, fazendo com que as alterações sejam adicionadas ao index. Qual é essa opção? Se precisar de ajuda, use o comando git cherry-pick --help.
+Alternativa correta:
+(-n) A opção -n ou --no-commit permite que recuperemos as alterações de um dado commit sem precisar inseri-lo no histórico local.
+
+42)git cherry-pick abcd..1234
+ 
+Correto! Para pegar todos os commits dentro de um intervalo, devemos escrever o hash do commit mais antigo seguido por dois pontos sem espaço e seguido pelo hash do commit mais recente. Cuidado, é importante não haver espaços e que sejam exatamente dois pontos!
+
+43)Alguns dos casos mais comuns de uso do git cherry-pick são situações em que um pull request ou a mescla de uma branch será recusada, mas há commits com código aproveitável e necessário. Estes commits precisam ser isolados e importados pra dentro da sua branch atual, com o cuidado de não incluir o restante do código que será descartado.
+
+
+44) Caso eu não queira usar a linha de comando podemos usar o modelo de manipulação grafica ultilizando o Git-cola
+Neste capítulo revisaremos os primeiros passos do uso do Git utilizando o máximo de interface gráfica. Inicialmente, precisamos instalar o Git-cola. Para isso, basta entrar no site http://git-cola.github.com/downloads.html e seguir as instruções conforme o seu sistema operacional.
+
+45)Instale o Git-Cola (link de download).
+Em seguida, importe o seu projeto no Git-Cola. Experimente a interface, crie commits, branchs, faça merges, desfaça conteúdo. Tente visualizar informações que são complicadas de analisar utilizando a interface de linha de comando
 
 
 
