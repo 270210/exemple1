@@ -127,5 +127,20 @@ da comando master que seria nossa bransher.
 
 26) git log para ver os nomes das alterações que foram descritas no  git commit
 
+27)O comando git mergetool mostra no console uma lista de programas possíveis de ser utilizados. Dessa lista, pode-se escolher um, instalar no seu computador e utilizar através do comando git mergetool -t nome_do_programa.
+
+28)Para saber mais, execute o comando git mergetool --help no terminal e veja as opções possíveis.
+
+29) git pull para ver se tem alguma alteração na branch master sendo que estou trabalhando em em outra branch remota
+
+30)git rebase + branch onde se encontra todo conteudo e onde eu quero pegar tambem o conteudo (exemplo master) + branch onde eu estou trabalhando exemplo se eu estiver mexendo com os estilos poderia ser a (branch estilo) se casio aparecer conflitos eu tenho que abrir o arquivo e ver onde está o conflito e entrar em acordo com o outro desenvolvedor para ver qual será a alteraçao mandante,depois salva e add depois ao inves de dar um commit novamente eu uso o git rebase --continue que ele ira continuar de onde ele parou,se der novamente o mesmo erro é só fazer o mesmo processo novamente.
+
+30)Mas agora, é necessário levar esses commits para a branch "master". Repare que é um processo diferente do rebase, onde apenas queríamos trocar a base de commits utilizada. Agora, é necessário colocar apenas os commits novos na branch "master", porém, para isso, existe o comando git merge que move os commits de uma determinada branch para outra branch.
+	Para utilizá-lo, primeiro é preciso ir para a branch para a qual se quer levar os commits, no caso, a "master" (git checkout master). Em seguida, deve-se dizer para o comando git merge de qual branch virão os commits novos, que, no caso, é a branch "desenvolvimento". Para isso, basta executar git merge desenvolvimento. 
+
+31)Da branch master, utilize o comando git checkout -b testeRebase para criar e se mover para uma nova branch
+
+
+
 
         
