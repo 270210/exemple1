@@ -140,6 +140,40 @@ da comando master que seria nossa bransher.
 
 31)Da branch master, utilize o comando git checkout -b testeRebase para criar e se mover para uma nova branch
 
+32)Caso eu tenha alterado varios lugares e queira voltar o estado anterior do meu arquivo  sem ele está na stage area eu dou git checkout -b + mais o nome do arquivo  ele irá pegar desde do ultimo checkout e ira aplicar no mesmo caso ele ja esteje na stage area ou add é só aplicar o git reset HEAD + nome do arquivo
+se caso eu queira voltar mais para tras o git ele nos fornece como se fosse um rg para cada commit que dado a ele no caso iremos dar git log ver o arquivo que vc quer voltar e continuar dali é só dar git reset -n + o codigo do commit.
+para coso eu queria desfazer o que um commit ja fez eu uso o git revert mais o codigo do commit.
+
+32)Pronto, agora temos que testar commit a commit, ou seja, realizando um git checkout com o hash de cada commit. Imagine o trabalho e o tempo que isso tomará! Por isso, o Git nos fornece o comando git bisect. Vamos utilizá-lo e acompanhar seu funcionamento.
+
+    git bisect start
+    git bisect bad HEAD
+Acima, iniciamos uma sessão de "bisect" e marcamos o commit HEAD como "bad" (ruim), ou seja, indicamos que ele contém o bug o qual queremos encontrar o momento em que foi introduzido.
+
+33)git checkout index.html
+ 
+Este comando vai restaurar o arquivo index.html ao seu estado original CASO ele não esteja no index ou staging area.
+
+34)git stash drop
+ 
+Este comando faz com que o último estado salvo seja apagado. Também podemos utilizar o nome de cada elemento do stash para remover algum estado que não seja o último. Por fim, se quisermos excluir todos os estados, podemos utilizar o comando git stash clear.
+
+35)git stash pop
+ 
+Este comando faz com que o último estado salvo seja recuperado e, caso não haja conflitos, deletado da pilha de dados armazenados.
+
+36)git stash
+ 
+Este comando faz com que as alterações que estão no working directory e no index sejam salvas, retornando o estado para o último commit.
+
+37)git stash apply
+ 
+Usando a opção apply, recuperamos as últimas alterações da pilha sem removê-las.
+
+38)
+
+
+
 
 
 
